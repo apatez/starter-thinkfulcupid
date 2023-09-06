@@ -5,6 +5,10 @@ body {
   color: #6b1a22;
 }
 
+h1 {
+  text-align: center;
+}
+
 h2 {
   font-size: 26px;
   font-weight: 400;
@@ -15,6 +19,7 @@ h2 {
 h3 {
   font-size: 18px;
   font-weight: 500;
+  margin: 0 0 20px 20px;
 }
 
 p {
@@ -32,8 +37,21 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 500px;
+  padding: 20px;
 }
+
+/* 
+
+In the README file, the example shows a line break, but I think it may
+have been placed there by accident seeing as the content above and below it
+is repeated
+
+hr {
+  background-color: #fff;
+  height: 3px;
+  border-color: #fff;
+} */
 
 /* ---  Groups & Items --- */
 
@@ -51,6 +69,14 @@ main img {
   flex: 2;
 }
 
+.formatting {
+  margin: 0 20px 10px 30px;
+}
+
+.p-blog {
+  margin: 0 10px 15px 20px;
+}
+
 /* -------  Navigation ------- */
 
 header {
@@ -63,6 +89,14 @@ header {
   font-family: "Tangerine", cursive;
   font-size: 72px;
   color: #ecdbc9;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  padding-bottom: 20px;
 }
 
 header nav ul li {
@@ -80,20 +114,31 @@ header nav ul li a:hover {
   text-decoration: none;
 }
 
+
+
 /* -------  Join Form ------- */
 form {
   border: 2px solid #6b1a22;
   padding: 10px;
+  margin: 20px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  
 }
+
 
 form label {
   font-weight: bold;
+  flex-basis: 130px;
+  
 }
 
 form select,
 form input {
-  margin-bottom: 20px;
   width: 180px;
+  display: flex;
+  justify-content: ;
 }
 
 form button {
@@ -118,3 +163,58 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+@media all and (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
+  header h1 {
+    margin: 14px 0;
+    padding-top: 0;
+  }
+
+  header nav {
+    margin-top: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 15px 30px 15px 0 ;
+  }
+
+  section form {
+    width: 800px;
+  }
+
+  form select,
+form input {
+  width: 180px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+  .group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .grow {
+    width: 700px;
+  }
+
+  .p-blog {
+    margin: 0 30px 15px 0 ;
+  }
+
+  .blog-img {
+    width: 700px;
+    padding: 0;
+  }
+
+ 
+}
